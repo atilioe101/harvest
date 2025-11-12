@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">harvest</string>
+    <string name="visits_module_name">Visitas</string>
+    <string name="visits_name">Visita</string>
+    <string name="visits_map">Mapa</string>
+    <string name="visits_list">Lista</string>
+</resources>
