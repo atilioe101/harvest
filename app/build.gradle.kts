@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.androidx.nav.compose)
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.ui)
+    implementation(libs.kotlinx.coroutines.android)
 
 
 
@@ -59,6 +60,7 @@ dependencies {
     // Google Maps Compose
     implementation(libs.maps.compose)
     implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)

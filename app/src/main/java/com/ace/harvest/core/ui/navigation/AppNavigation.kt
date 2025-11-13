@@ -9,24 +9,16 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.ace.harvest.R
-import com.ace.harvest.features.visits.ui.VisitsFeatureEntry
+import com.ace.harvest.features.visits.ui.screens.VisitsScreen
 
 @Composable
-fun AppNavigation(navController: NavHostController) {
-    val features = listOf(
-        VisitsFeatureEntry(route = AppDestinations.VISITS),
-    )
-
+fun AppNavigation(navController: NavHostController, hasLocation: Boolean) {
     NavHost(
         navController = navController,
         startDestination = AppDestinations.VISITS
     ) {
-        features.forEach { feature ->
-            composable(
-                route = feature.route,
-                arguments = feature.arguments,
-                deepLinks = feature.deepLinks
-            ) { navBackStackEntry -> feature.Draw(navBackStackEntry) }
+        composable(AppDestinations.VISITS) {
+            VisitsScreen(hasLocation = hasLocation)
         }
     }
 }
