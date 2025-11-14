@@ -1,4 +1,4 @@
-package com.ace.harvest.features.visits.ui.screens
+package com.ace.harvest.features.visits.ui
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
@@ -22,6 +22,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.ace.harvest.R
+import com.ace.harvest.features.visits.ui.screens.ListScreen
+import com.ace.harvest.features.visits.ui.screens.MapScreen
 
 sealed class VisitsNavigation(val route: String, @StringRes val label: Int, val icon: ImageVector) {
     object Map : VisitsNavigation("map", R.string.visits_map, Icons.Default.LocationOn)
@@ -42,18 +44,18 @@ fun VisitsScreen(hasLocation: Boolean) {
             )
         }
     ) { innerPadding ->
-        Box(modifier = Modifier.padding(innerPadding).fillMaxSize()) {
+        Box(modifier = Modifier.Companion.padding(innerPadding).fillMaxSize()) {
             val alphaMap: Float
             val alphaList: Float
 
-            when(selectedScreen){
-                VisitsNavigation.Map -> {alphaMap = 1f ; alphaList = 0f}
+            when (selectedScreen) {
+                VisitsNavigation.Map -> {alphaMap = 1f; alphaList = 0f}
                 else -> {alphaMap = 0f; alphaList = 1f}
             }
-            Box(modifier = Modifier.graphicsLayer { alpha = alphaMap }) {
+            Box(modifier = Modifier.Companion.graphicsLayer { alpha = alphaMap }) {
                 MapScreen(hasLocation)
             }
-            Box(modifier = Modifier.graphicsLayer { alpha = alphaList }) {
+            Box(modifier = Modifier.Companion.graphicsLayer { alpha = alphaList }) {
                 ListScreen()
             }
         }

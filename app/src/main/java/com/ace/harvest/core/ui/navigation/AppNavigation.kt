@@ -9,7 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.ace.harvest.R
-import com.ace.harvest.features.visits.ui.screens.VisitsScreen
+import com.ace.harvest.features.visits.ui.VisitsScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController, hasLocation: Boolean) {
