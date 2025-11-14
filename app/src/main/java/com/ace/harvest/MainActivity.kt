@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -66,10 +65,10 @@ class MainActivity : ComponentActivity() {
             HarvestTheme {
                 val state by viewModel.uiState.collectAsStateWithLifecycle()
                 when(state.mode){
-                    is IScreenMode.Loading -> AppLoading()
+                    is IScreenMode.Loading -> Initialize()
                     is IScreenMode.Success -> {
                         val hasLocation by viewModel.hasLocationState
-                        AppContent(hasLocation?: false)
+                        MainContent(hasLocation?: false)
                     }
                     is IScreenMode.Error -> TODO()
                     IScreenMode.Idle -> TODO()
@@ -80,7 +79,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun AppLoading() {
+fun Initialize() {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = Color(0xFFFFFFFF)
@@ -88,32 +87,24 @@ fun AppLoading() {
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
-             Image(
+            verticalArrangement = Arrangement.Center) {
+            Image(
                 modifier = Modifier.size(240.dp),
                 painter = painterResource(id = R.drawable.harvest),
-                contentDescription = "Harvest App Logo"
-            )
+                contentDescription = "Harvest App Logo")
             Spacer(modifier = Modifier.height(2.dp))
             Text(
                 text = stringResource(id = R.string.app_name),
                 style = MaterialTheme.typography.titleLarge,
                 color = Color(0xFF354E16),
                 fontWeight = FontWeight.Bold,
-                fontSize = 40.sp
-            )
-          /*  CircularProgressIndicator(
-                color = Color.LightGray
-            )
-            Spacer(modifier = Modifier.height(32.dp))*/
-
+                fontSize = 45.sp)
         }
     }
 }
 
 @Composable
-fun AppContent(
+fun MainContent(
     haslocation: Boolean
 ) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
