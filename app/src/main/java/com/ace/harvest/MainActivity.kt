@@ -49,9 +49,11 @@ import com.ace.harvest.core.ui.navigation.AppDestinations
 import com.ace.harvest.core.ui.navigation.AppNavigation
 import com.ace.harvest.core.ui.navigation.currentRouteTitle
 import com.ace.harvest.core.ui.theme.HarvestTheme
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels {
