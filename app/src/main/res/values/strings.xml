@@ -4,4 +4,6 @@
     <string name="visits_name">Visita</string>
     <string name="visits_map">Mapa</string>
     <string name="visits_list">Lista</string>
+    <string name="visits_empty_state">Aún no hay áreas disponibles.</string>
+    <string name="retry">Reintentar</string>
 </resources>
