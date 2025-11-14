@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "334291144568",
+    "project_id": "harvest-7dd6d",
+    "storage_bucket": "harvest-7dd6d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334291144568:android:a35469327bb3509016428d",
+        "android_client_info": {
+          "package_name": "com.ace.harvest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkjeFbAiT1xK7p5oZMUmACRjzO9PgbG-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
